@@ -4,15 +4,15 @@ namespace Assets.Scripts.Character.State.Character
 {
     public class CharacterStateExchanger : MonoBehaviour
     {
-        [SerializeField] private Enemy.RunningEnemy _enemy;
-        [SerializeField] private Animator _enemyAnimator;
+        [SerializeField] private Scripts.Character.Character _character;
+        [SerializeField] private Animator _animator;
         private CharacterBaseState _currentState;
 
-        public Enemy.RunningEnemy Enemy => _enemy;
-        public Animator EnemyAnimator => _enemyAnimator;
+        public Scripts.Character.Character Character => _character;
+        public Animator Animator => _animator;
         public CharacterBaseState CurrentState => _currentState;
 
-        public void SetState(CharacterBaseState stateType)
+        public void SetState(CharacterStateType stateType)
         {
             var state = GetStateByType(stateType);
             if (_currentState != null)
@@ -27,11 +27,11 @@ namespace Assets.Scripts.Character.State.Character
         {
             switch(type)
             {
-                case CharacterStateType.Run: return new RunningEnemyRunState();
-                case CharacterStateType.Die: return new RunningEnemyDieState();
+                case CharacterStateType.Run: return new CharacterRunState();
+                case CharacterStateType.Die: return new CharacterDieState();
                 case CharacterStateType.Idle: 
                 default: 
-                    return new RunningEnemyIdleState();
+                    return new CharacterIdleState();
             }
         }
     }
