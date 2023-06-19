@@ -14,7 +14,7 @@ namespace Assets.Scripts.Character.Shooter
             {
                 if (_timer <= 0)
                 {
-                    _automaticWeapon.Attack();
+                    _automaticWeapon.Attack(Character);
                     _timer = _automaticWeapon.Delay;
                 }
                 else

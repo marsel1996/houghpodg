@@ -8,6 +8,25 @@ namespace Assets.Scripts.Common
         [SerializeField] private UnitHealth _target;
         [SerializeField] private Text _textShower;
         [SerializeField] private Image _currentShower;
+        [SerializeField] private Transform _point;
+        private Transform _selfTransfom;
+
+        public Transform Point
+        {
+            get => _point;
+            set => _point = value;
+        }
+
+        public UnitHealth Target
+        {
+            get => _target;
+            set => _target = value;
+        }
+
+        private void Awake()
+        {
+            _selfTransfom = transform;
+        }
 
         private void Start() => UpdateHealthBar();
 
@@ -20,14 +39,13 @@ namespace Assets.Scripts.Common
             var totalHealth = _target.Health;
             var currentHealth = _target.CurrentHealth;
 
-            if (currentHealth <= 0)
-            {
-                Debug.Log("Кажется пора умерать");
-                return;
-            }
-
             _textShower.text = $"<b>{currentHealth}</b> / <b>{totalHealth}</b>";
             _currentShower.fillAmount = currentHealth / totalHealth;
+        }
+
+        private void FixedUpdate()
+        {
+            _selfTransfom.position = _point.position;
         }
     }
 }

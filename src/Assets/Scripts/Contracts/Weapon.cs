@@ -4,6 +4,8 @@ namespace Assets.Scripts.Contracts
 {
     public abstract class Weapon : MonoBehaviour
     {
-        public abstract void Attack();
+        public Transform Carrier { get; set; }
+
+        public abstract void Attack(MonoBehaviour owner);
     }
 }

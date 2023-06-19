@@ -40,15 +40,16 @@ namespace Assets.Scripts.Character
 
             var weaponMode = modeBuilder.GetMode();
 
-            var holder = Instantiate(weaponMode.Holder, _character.HolderPoint.position, Quaternion.identity, _character.HolderPoint);
+            var holder = Instantiate(weaponMode.Holder, _character.HolderPoint.position, _character.Transform.rotation, _character.HolderPoint);
             _currenctHolder = holder.gameObject;
 
             Contracts.Weapon weapon = null;
 
             if (weaponMode.Weapon)
             {
-                weapon = Instantiate(weaponMode.Weapon, new Vector3(0, 0, 0), Quaternion.identity, holder.WeaponPoint);
+                weapon = Instantiate(weaponMode.Weapon, new Vector3(0, 0, 0), _character.Transform.rotation, holder.WeaponPoint);
                 weapon.transform.localPosition = new Vector3(0, 0, 0);
+                weapon.Carrier = _character.Transform;
                 _currenctWeapon = weapon.gameObject;
             }
 

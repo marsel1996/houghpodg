@@ -10,7 +10,7 @@ namespace Assets.Scripts.Character
 
         private void Update()
         {
-            if (Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
+            if (Input.GetButton("Horizontal"))
             {
                 Move();
             }
@@ -18,11 +18,7 @@ namespace Assets.Scripts.Character
 
         public void Move()
         {
-            var directionX = Input.GetAxis("Horizontal");
-            var directionY = Input.GetAxis("Vertical");
-
-            var direction = Vector3.right * directionX + Vector3.up * directionY;
-            _character.transform.Translate(direction * _speed * Time.deltaTime);
+            _character.Translate(Vector3.right * _speed * Time.deltaTime);
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Assets.Scripts.Character.Shooter
         {
             if (Input.GetButtonDown("Fire1"))
             {
-                _commonWeapon.Attack();
+                _commonWeapon.Attack(Character);
             }
         }
     }

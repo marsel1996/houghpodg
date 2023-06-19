@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.Common;
+﻿using Assets.Scripts.Common.Factory;
 using Assets.Scripts.Contracts;
 
 namespace Assets.Scripts.Holder.Factory
@@ -7,7 +7,7 @@ namespace Assets.Scripts.Holder.Factory
     {
         public override Contracts.Holder CreateHolder()
         {
-            return HolderPrefabs.Initialize().WithPistolHolder;
+            return CharacterHolderPrefabs.Initialize().WithPistolHolder;
         }
     }
 }

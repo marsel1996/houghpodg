@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.Common;
+﻿using Assets.Scripts.Common.Factory;
 using Assets.Scripts.Contracts;
 
 namespace Assets.Scripts.Weapon.Factory
@@ -7,7 +7,7 @@ namespace Assets.Scripts.Weapon.Factory
     {
         public override Contracts.Weapon CreateWeapon()
         {
-            return WeaponPrefabs.Initialize().Ak47;
+            return CharacterWeaponPrefabs.Initialize().Ak47;
         }
     }
 }
