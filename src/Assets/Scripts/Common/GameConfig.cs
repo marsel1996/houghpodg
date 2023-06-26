@@ -30,6 +30,11 @@ namespace Assets.Scripts.Common
             _deadPanel.gameObject.SetActive(true);
         }
 
+        public void Finish()
+        {
+            _victoryPanel.gameObject.SetActive(true);
+        }
+
         private void Awake()
         {
             if (_instance) return;
