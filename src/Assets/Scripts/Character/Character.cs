@@ -10,6 +10,7 @@ namespace Assets.Scripts.Character
         [SerializeField] private Transform _holderPoint;
         [SerializeField] private CharacterStateExchanger _stateExchanger;
         [SerializeField] private CharacterWeaponModeExchanger _weaponMode;
+        [SerializeField] private CharacterHealth _health; 
         [SerializeField] private Transform _body;
 
         public Transform Transform => _self;
@@ -19,6 +20,13 @@ namespace Assets.Scripts.Character
         public void Die()
         {
             _stateExchanger.SetState(CharacterStateType.Die);
+            Remove(true);
+        }
+
+        public void DestroyScripts()
+        {
+            _health.Remove();
+            _stateExchanger.Remove();
         }
 
         private void Start()

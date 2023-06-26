@@ -2,7 +2,7 @@
 
 namespace Assets.Scripts.Meny
 {
-    public class Pause : CommonPanel
+    public class DeadPanel : CommonPanel
     {
     }
 }

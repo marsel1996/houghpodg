@@ -7,7 +7,9 @@ namespace Assets.Scripts.Common
     public class GameConfig : Unit
     {
         [SerializeField] private List<Character.Character> _characters;
-        [SerializeField] private Pause _pause;
+        [SerializeField] private Pause _pause; 
+        [SerializeField] private DeadPanel _deadPanel;
+        [SerializeField] private VictoryPanel _victoryPanel;
 
         private static GameConfig _instance;
 
@@ -25,11 +27,7 @@ namespace Assets.Scripts.Common
 
         public void End()
         {
-            var enemies = FindObjectsOfType<Contracts.Enemy>();
-            foreach(var enemy in enemies)
-            {
-                enemy.Die();
-            }
+            _deadPanel.gameObject.SetActive(true);
         }
 
         private void Awake()
