@@ -6507,6 +6507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characters:
   - {fileID: 918074204}
+  _pause: {fileID: 1445915274}
 --- !u!1 &501491921
 GameObject:
   m_ObjectHideFlags: 0
@@ -23529,6 +23530,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1445915273}
+  - component: {fileID: 1445915274}
   m_Layer: 0
   m_Name: PausePanel
   m_TagString: Untagged
@@ -23553,6 +23555,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1445915274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445915272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd8451ab00d47d84aba080516d039dc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1500419770
 GameObject:
   m_ObjectHideFlags: 0
