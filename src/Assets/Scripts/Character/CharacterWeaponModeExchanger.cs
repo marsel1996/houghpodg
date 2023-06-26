@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Character.WeaponMode.Builder;
+using Assets.Scripts.Common;
 using Assets.Scripts.Contracts;
 using Assets.Scripts.Enums;
 using System;
@@ -6,31 +7,24 @@ using UnityEngine;
 
 namespace Assets.Scripts.Character
 {
-    public class CharacterWeaponModeExchanger : MonoBehaviour
+    public class CharacterWeaponModeExchanger : Unit
     {
         [SerializeField] private Character _character;
         [SerializeField] private CharacterWeaponModeType _defaultMode = CharacterWeaponModeType.Empty; 
         [SerializeField] private CharacterWeaponModeType _currentMode;
-        [SerializeField] private GameObject _currenctHolder;
-        [SerializeField] private GameObject _currenctWeapon;
+        [SerializeField] private Contracts.Holder _currenctHolder;
+        [SerializeField] private Contracts.Weapon _currenctWeapon;
 
         public delegate void WeaponChanged(Contracts.Weapon weapon);
         public delegate void HolderChanged(Contracts.Holder holder);
-
-        private bool IsEmpty => _currenctHolder == null;
 
         public event WeaponChanged OnWeaponChanged;
         public event HolderChanged OnHolderChanged;
 
         public void SetMode(CharacterWeaponModeType mode)
         {
-            if (!IsEmpty)
-            {
-                Destroy(_currenctHolder.gameObject);
-                Destroy(_currenctWeapon.gameObject);
-                Destroy(_currenctHolder);
-                Destroy(_currenctWeapon);
-            }
+            _currenctHolder?.Remove(true);
+            _currenctWeapon?.Remove(true);
 
             var modeBuilder = new CharacterWeaponModeBuilder();
 
@@ -41,7 +35,8 @@ namespace Assets.Scripts.Character
             var weaponMode = modeBuilder.GetMode();
 
             var holder = Instantiate(weaponMode.Holder, _character.HolderPoint.position, _character.Transform.rotation, _character.HolderPoint);
-            _currenctHolder = holder.gameObject;
+            holder.name = weaponMode.Holder.name;
+            _currenctHolder = holder;
 
             Contracts.Weapon weapon = null;
 
@@ -49,8 +44,7 @@ namespace Assets.Scripts.Character
             {
                 weapon = Instantiate(weaponMode.Weapon, new Vector3(0, 0, 0), _character.Transform.rotation, holder.WeaponPoint);
                 weapon.transform.localPosition = new Vector3(0, 0, 0);
-                weapon.Carrier = _character.Transform;
-                _currenctWeapon = weapon.gameObject;
+                _currenctWeapon = weapon;
             }
 
             OnWeaponChanged?.Invoke(weapon);

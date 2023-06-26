@@ -7,6 +7,9 @@
             var animator = exchanger.EnemyAnimator;
             var enemy = exchanger.Enemy;
 
+            enemy.DestroyBody();
+            enemy.DestroyScripts();
+
             animator.SetInteger("state", (int)RunningEnemyStateType.Die);
         }
 

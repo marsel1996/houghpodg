@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Common;
+using Assets.Scripts.Enemy;
 using UnityEngine;
 
 namespace Assets.Scripts.Weapon.Bullet
@@ -7,18 +8,15 @@ namespace Assets.Scripts.Weapon.Bullet
     {
         private void Awake()
         {
-            SetValue(2);
+            SetValue(3);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            print("Enter bullet");
             var unit = collision.GetComponent<UnitDamagable>();
-            if (unit)
+            if (unit && unit is EnemyDamagable)
             {
-                var damage = new GetDamage(this);
-                unit.Damage(damage);
-                Destroy(gameObject);
+                Damage(unit);
             }
         }
     }

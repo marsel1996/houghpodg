@@ -1,10 +1,10 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Common;
+using UnityEngine;
 
 namespace Assets.Scripts.Contracts
 {
-    public abstract class UnitCauseDamage : MonoBehaviour
+    public abstract class UnitCauseDamage : Unit
     {
-        public MonoBehaviour Owner { get; set; }
         public float Value { get; private set; }
 
         public void SetValue(float value)

@@ -12,21 +12,21 @@ TagManager:
   - Water
   - UI
   - 
+  - Character
+  - Enemy
   - 
   - 
   - 
+  - TriggerSpawn
   - 
   - 
   - 
+  - EnemyDamage
+  - CharacterDamage
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - BoundsLevel
   - 
   - 
   - 
@@ -41,6 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Indicators
-    uniqueID: 2074182359
+  - name: SortingLayerMap
+    uniqueID: 3777321287
+    locked: 0
+  - name: SortingLayerPreferObjects
+    uniqueID: 3463077125
+    locked: 0
+  - name: SortingLayerSecondObjects
+    uniqueID: 508004851
     locked: 0

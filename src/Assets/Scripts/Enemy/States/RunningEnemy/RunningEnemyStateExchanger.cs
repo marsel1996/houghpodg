@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
+using Assets.Scripts.Common;
 
 namespace Assets.Scripts.Enemy.States.RunningEnemy
 {
-    public class RunningEnemyStateExchanger : MonoBehaviour
+    public class RunningEnemyStateExchanger : Unit
     {
         [SerializeField] private Enemy.RunningEnemy _enemy;
         [SerializeField] private Animator _enemyAnimator;

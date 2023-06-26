@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Common
 {
-    public abstract class UnitHealth : MonoBehaviour, IHealthable
+    public abstract class UnitHealth : Unit, IHealthable
     {
         [SerializeField] private float _health;
         [SerializeField] private float _currentHealth;
@@ -11,10 +11,17 @@ namespace Assets.Scripts.Common
 
         public float Health => _health;
         public float CurrentHealth => _currentHealth;
+        public HealthBar HealthBar => _healthBar;
 
         public event IHealthable.HealthChanged OnHealthChanged;
 
         public abstract void Die();
+
+        public override void Remove(bool withGameObject = false)
+        {
+            _healthBar.Remove(true);
+            base.Remove();
+        }
 
         public void AddCurrentHealth(float value)
         {

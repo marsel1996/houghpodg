@@ -2,7 +2,7 @@
 
 namespace Assets.Scripts.Common
 {
-    public class HealthBarCreator : MonoBehaviour
+    public class HealthBarCreator : Unit
     {
         [SerializeField] private HealthBar _healthBarPrefab;
         [SerializeField] private Transform _healthBarPoint;

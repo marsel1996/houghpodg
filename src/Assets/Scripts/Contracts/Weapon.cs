@@ -1,11 +1,9 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Common;
 
 namespace Assets.Scripts.Contracts
 {
-    public abstract class Weapon : MonoBehaviour
+    public abstract class Weapon : Unit
     {
-        public Transform Carrier { get; set; }
-
-        public abstract void Attack(MonoBehaviour owner);
+        public abstract void Attack();
     }
 }

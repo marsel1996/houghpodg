@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
+using Assets.Scripts.Common;
 
 namespace Assets.Scripts.Character.State.Character
 {
-    public class CharacterStateExchanger : MonoBehaviour
+    public class CharacterStateExchanger : Unit
     {
         [SerializeField] private Scripts.Character.Character _character;
         [SerializeField] private Animator _animator;

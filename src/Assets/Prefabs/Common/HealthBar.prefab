@@ -276,6 +276,7 @@ MonoBehaviour:
   _target: {fileID: 0}
   _textShower: {fileID: 3011736142387546672}
   _currentShower: {fileID: 7712000627089740920}
+  _point: {fileID: 0}
 --- !u!1 &6473936223922644547
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,7 +418,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 2074182359
+  m_SortingLayerID: -831890171
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &7118067937664197217

@@ -1,12 +1,9 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Common;
 
 namespace Assets.Scripts.Contracts
 {
-    public abstract class CharacterShooter : MonoBehaviour
+    public abstract class CharacterShooter : Unit
     {
-        [SerializeField] private Character.Character _character;
-
         public Weapon Weapon { get; set; }
-        public Character.Character Character => _character;
     }
 }

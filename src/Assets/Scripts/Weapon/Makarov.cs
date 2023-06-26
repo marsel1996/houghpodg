@@ -1,14 +1,12 @@
 ﻿using Assets.Scripts.Contracts;
-using UnityEngine;
 
 namespace Assets.Scripts.Weapon
 {
     public class Makarov : CommonGun
     {
-        public override void Attack(MonoBehaviour owner)
+        public override void Attack()
         {
-            print("paf paf");
-            base.Attack(owner);
+            base.Attack();
         }
     }
 }

@@ -1,14 +1,14 @@
-﻿using Assets.Scripts.Contracts;
+﻿using Assets.Scripts.Common;
+using Assets.Scripts.Contracts;
 using System;
 using UnityEngine;
 
 namespace Assets.Scripts.Character.Shooter
 {
-    public class CharacterShooterExchanger : MonoBehaviour
+    public class CharacterShooterExchanger : Unit
     {
         [SerializeField] private Character _character;
         [SerializeField] private CharacterWeaponModeExchanger _weaponMode;
-        [SerializeField] private Contracts.Weapon _weapon;
         [SerializeField] private CharacterShooter _currentShooter;
 
         private void OnEnable()
@@ -26,8 +26,7 @@ namespace Assets.Scripts.Character.Shooter
             var shooterType = GetShooterComponentByWeapon(weapon);
             SetCurrentShooter(shooterType);
 
-            _weapon = weapon;
-            if (_currentShooter)
+            if (_currentShooter != null)
             {
                 _currentShooter.Weapon = weapon;
             }
@@ -37,7 +36,8 @@ namespace Assets.Scripts.Character.Shooter
         {
             if (shooterType == null)
             {
-                Destroy(_currentShooter);
+                _currentShooter?.Remove();
+                _currentShooter = null;
                 return;
             }
 
@@ -46,7 +46,7 @@ namespace Assets.Scripts.Character.Shooter
 
             if (notNeedChange) return;
 
-            Destroy(_currentShooter);
+            _currentShooter?.Remove();
             var shooterComponent = _character.gameObject.AddComponent(shooterType) as CharacterShooter;
             _currentShooter = shooterComponent;
         }

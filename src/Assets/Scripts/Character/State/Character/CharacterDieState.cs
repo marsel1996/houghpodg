@@ -4,12 +4,13 @@
     {
         public override void Enter(CharacterStateExchanger exchanger)
         {
-            throw new System.NotImplementedException();
+            var animator = exchanger.Animator;
+
+            animator.SetInteger("state", (int)CharacterStateType.Die);
         }
 
         public override void Exit(CharacterStateExchanger exchanger)
         {
-            throw new System.NotImplementedException();
         }
     }
 }

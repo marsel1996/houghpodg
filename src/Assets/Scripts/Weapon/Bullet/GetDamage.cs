@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Common;
+﻿using Assets.Scripts.Character;
+using Assets.Scripts.Common;
 using Assets.Scripts.Contracts;
 using Assets.Scripts.Enemy;
 
@@ -21,6 +22,8 @@ namespace Assets.Scripts.Weapon.Bullet
 
         public void Visit(CharacterDamagable unit)
         {
+            var damage = _causeDamage.Value * -1;
+            unit.Health.AddCurrentHealth(damage);
         }
 
         public void Visit(UnitDamagable unit)

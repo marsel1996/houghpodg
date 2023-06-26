@@ -2,7 +2,7 @@
 
 namespace Assets.Scripts.Common.Factory
 {
-    public class CharacterHolderPrefabs : MonoBehaviour
+    public class CharacterHolderPrefabs : Unit
     {
         [SerializeField] private Contracts.Holder _withAutomat;
         [SerializeField] private Contracts.Holder _withPistol;

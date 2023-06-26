@@ -14,16 +14,15 @@ namespace Assets.Scripts.Contracts
         public float Delay => _delay;
         public Transform FirePoint => _firePoint;
 
-        public override void Attack(MonoBehaviour owner)
+        public override void Attack()
         {
-            var bullet = CreateBullet(owner);
+            var bullet = CreateBullet();
             BulletMove(bullet);
         }
         
-        protected Bullet CreateBullet(MonoBehaviour owner)
+        protected Bullet CreateBullet()
         {
-            var bullet = Instantiate(_prefabBullet, FirePoint.position, Carrier.rotation);
-            bullet.Owner = owner;
+            var bullet = Instantiate(_prefabBullet, _firePoint.position, _firePoint.rotation);
             return bullet;
         }
 

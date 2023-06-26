@@ -10,14 +10,6 @@ namespace Assets.Scripts.Enemy
         public override void Die()
         {
             _enemy.Die();
-            Destroy(_healthBar.gameObject);
-            Destroy(_enemy.GetComponent<EnemyDamagable>());
-            Invoke(nameof(Death), 2f);
-        }
-
-        private void Death()
-        {
-            Destroy(gameObject);
         }
     }
 }

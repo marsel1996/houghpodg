@@ -9,7 +9,8 @@ namespace Assets.Scripts.Character
 
         public override void Die()
         {
-            throw new System.NotImplementedException();
+            _character.Die();
+            GameConfig.Initialize().End();
         }
     }
 }

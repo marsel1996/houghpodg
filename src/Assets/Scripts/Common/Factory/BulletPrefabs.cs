@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Common.Factory
 {
-    public class BulletPrefabs : MonoBehaviour
+    public class BulletPrefabs : Unit
     {
         [SerializeField] private CommonBullet _long;
         [SerializeField] private CommonBullet _short;

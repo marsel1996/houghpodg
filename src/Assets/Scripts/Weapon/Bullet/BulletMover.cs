@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
+using Assets.Scripts.Common;
 
 namespace Assets.Scripts.Weapon.Bullet
 {
-    public class BulletMover : MonoBehaviour
+    public class BulletMover : Unit
     {
         [SerializeField] private float _currentTime = 0;
         private Transform _transform;
@@ -24,8 +25,7 @@ namespace Assets.Scripts.Weapon.Bullet
 
             if (_currentTime >= FlyTime)
             {
-                Destroy(_bullet);
-                Destroy(_bullet.gameObject);
+                _bullet.Remove(true);
             } 
         }
     }

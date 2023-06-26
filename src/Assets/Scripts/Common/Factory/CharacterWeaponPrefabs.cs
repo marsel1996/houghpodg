@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Common.Factory
 {
-    public class CharacterWeaponPrefabs : MonoBehaviour
+    public class CharacterWeaponPrefabs : Unit
     {
         [SerializeField] private Ak47 _ak47;
         [SerializeField] private Makarov _makarov;

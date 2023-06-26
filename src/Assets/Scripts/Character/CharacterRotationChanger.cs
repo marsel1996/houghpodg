@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Common;
+using UnityEngine;
 
 namespace Assets.Scripts.Character
 {
-    public class CharacterRotationChanger : MonoBehaviour
+    public class CharacterRotationChanger : Unit
     {
         [SerializeField] private Transform _character;
 

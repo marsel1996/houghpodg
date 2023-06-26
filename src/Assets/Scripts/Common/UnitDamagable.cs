@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Common
 {
-    public abstract class UnitDamagable : MonoBehaviour
+    public abstract class UnitDamagable : Unit
     {
         [SerializeField] private Collider2D _triggerArea;
 

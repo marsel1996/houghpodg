@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Common;
+﻿using Assets.Scripts.Character;
+using Assets.Scripts.Common;
 using Assets.Scripts.Enemy;
 
 namespace Assets.Scripts.Contracts

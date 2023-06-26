@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8480245151823904053}
   - component: {fileID: 1107919621265390835}
   - component: {fileID: -2244758028528921584}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Bullet (Makarov)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 6494297700744598054}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1375502799591974250}
@@ -84,7 +84,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1375502799591974250}
   - component: {fileID: 4085509763885733569}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,8 +144,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -831890171
+  m_SortingLayer: 2
   m_SortingOrder: 9
   m_Sprite: {fileID: -2001983516, guid: 6a7b0ee37dc7a5045bbf1a2bfb12ae89, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

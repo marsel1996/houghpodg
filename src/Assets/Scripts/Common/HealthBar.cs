@@ -3,13 +3,13 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.Common
 {
-    public class HealthBar : MonoBehaviour
+    public class HealthBar : Unit
     {
         [SerializeField] private UnitHealth _target;
         [SerializeField] private Text _textShower;
         [SerializeField] private Image _currentShower;
         [SerializeField] private Transform _point;
-        private Transform _selfTransfom;
+        private Transform _transform;
 
         public Transform Point
         {
@@ -25,7 +25,7 @@ namespace Assets.Scripts.Common
 
         private void Awake()
         {
-            _selfTransfom = transform;
+            _transform = transform;
         }
 
         private void Start() => UpdateHealthBar();
@@ -43,9 +43,9 @@ namespace Assets.Scripts.Common
             _currentShower.fillAmount = currentHealth / totalHealth;
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
-            _selfTransfom.position = _point.position;
+            _transform.position = _point.position;
         }
     }
 }
