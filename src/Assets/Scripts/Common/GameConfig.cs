@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Assets.Scripts.Meny;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.Common
@@ -6,6 +7,7 @@ namespace Assets.Scripts.Common
     public class GameConfig : Unit
     {
         [SerializeField] private List<Character.Character> _characters;
+        [SerializeField] private Pause _pause;
 
         private static GameConfig _instance;
 
@@ -35,6 +37,14 @@ namespace Assets.Scripts.Common
             if (_instance) return;
 
             _instance = this;
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                _pause.gameObject.SetActive(!_pause.gameObject.activeSelf);
+            }
         }
     }
 }
