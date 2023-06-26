@@ -58,15 +58,15 @@ namespace Assets.Scripts.Character
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Keypad1))
+            if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
             {
                 SetMode(CharacterWeaponModeType.Main);
             }
-            if (Input.GetKeyDown(KeyCode.Keypad2))
+            if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
             {
                 SetMode(CharacterWeaponModeType.Second);
             }
-            if (Input.GetKeyDown(KeyCode.Keypad3))
+            if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
             {
                 SetMode(CharacterWeaponModeType.Empty);
             }
