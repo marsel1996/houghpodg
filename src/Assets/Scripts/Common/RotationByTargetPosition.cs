@@ -16,6 +16,8 @@ namespace Assets.Scripts.Common
 
         private void Rotate()
         {
+            if (_target == null) return;
+
             if (_target.Transform.position.x >= _transform.position.x)
             {
                 _transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
